@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import queryString from "query-string";
-import io from "socket.io-client";
-import Header from "../Header/Header";
-import Dashboard from "../Dashboard/Dashboard";
-import "./Chat.css";
+import React, { useState, useEffect } from "react"
+import queryString from "query-string"
+import io from "socket.io-client"
+import Header from "../Header/Header"
+import Dashboard from "../Dashboard/Dashboard"
+import "./Chat.css"
 
-let socket;
+let socket
 
 const Chat = () => {
   return (
-    <div>
+    <div className="chat-home">
       <Header />
       <Dashboard />
       {/* <div className="outerContainer">
@@ -24,7 +24,7 @@ const Chat = () => {
         </div>
       </div> */}
     </div>
-  );
-};
+  )
+}
 
-export default Chat;
+export default Chat
