@@ -1,18 +1,26 @@
 @font-face {
-    font-family: "Aquire";
-    src: local('Aquire'), url('../../fonts/Aquire-BW0ox.otf') format('truetype');
+  font-family: "Aquire";
+  src: local("Aquire"), url("../../fonts/Aquire-BW0ox.otf") format("truetype");
 }
 
 .App-header {
-    display: flex;
-    width: 100vw;
-    background-color: teal;
-    justify-content: center;
-    font-size: 46;
-    height: 15%;
+  display: flex;
+  width: 100vw;
+  background-color: rgba(0, 178, 128, 75);
+  justify-content: center;
+  font-size: 46;
+  height: 15%;
 }
 
 .App-header h1 {
-    font-size: 46px;
-    font-family: 'Aquire';
+  font-size: 46px;
+  font-family: "Aquire";
+  color: white;
+}
+
+.logo {
+  color: white;
+  position: relative;
+  top: 30px;
+  right: 7px;
 }

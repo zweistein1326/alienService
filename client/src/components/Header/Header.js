@@ -1,13 +1,15 @@
-import React from "react";
-import "./Header.css";
-import '../../fonts/Aquire-BW0ox.otf';
+import React from "react"
+import "./Header.css"
+import "../../fonts/Aquire-BW0ox.otf"
+import { GiCrackedAlienSkull } from "react-icons/gi"
 
 const Header = () => {
   return (
     <div className="App-header">
-      <h1>Alienated</h1>
+      <GiCrackedAlienSkull className="logo" size="40" />
+      <h1>Alien8</h1>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

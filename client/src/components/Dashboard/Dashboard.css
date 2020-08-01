@@ -1,7 +1,9 @@
 .home {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("../../assets/pexels-miriam-espacio-110854.jpg");
+  background-size: cover;
 }
