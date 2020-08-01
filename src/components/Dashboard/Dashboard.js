@@ -1,21 +1,16 @@
 import React from "react";
 import "./Dashboard.css";
-import { Box } from "@chakra-ui/core";
+import { Box, Flex } from "@chakra-ui/core";
+import ChatBox from "../ChatBox/ChatBox";
 
 const Dashboard = () => {
   return (
     <div className="home">
-      <Box
-        bg="teal"
-        width="90%"
-        height="85%"
-        display="flex"
-        alignItems="center"
-      >
+      <Flex bg="teal" width="100%" height="85%" alignItems="center">
         <Box
           border="2px solid black"
           height="80%"
-          width="40%"
+          width="60%"
           margin="2rem"
           position="relative"
         >
@@ -31,10 +26,8 @@ const Dashboard = () => {
             User2 image goes here
           </Box>
         </Box>
-        <Box border="2px solid black" height="80%" width="60%" margin="2rem">
-          Chat Box
-        </Box>
-      </Box>
+        <ChatBox />
+      </Flex>
     </div>
   );
 };
