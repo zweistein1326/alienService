@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/core";
 import "./ChatBox.css";
-// import { IoIosRocket } from "react-icons/io";
-// import queryString from "query-string";
-// import io from "socket.io-client";
-// import onlineIcon from "../../icons/onlineIcon.png";
 import Input from "./Input";
 
 let socket;

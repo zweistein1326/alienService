@@ -3,24 +3,7 @@ import { IoIosRocket } from "react-icons/io";
 import { Box, Button, FormControl, Input, Flex } from "@chakra-ui/core";
 
 const InputColumn = ({ message, setMessage, sendMessage }) => {
-  console.log(message);
   return (
-    // <FormControl className="form">
-    //   <Input
-    //     width="96%"
-    //     className="input"
-    //     type="text"
-    //     placeholder="Type a message..."
-    //     value={message}
-    //     onChange={(event) => setMessage(event.target.value)}
-    //     onKeyPress={(event) =>
-    //       event.key === "Enter" ? sendMessage(event) : null
-    //     }
-    //   />
-    //   <Button className="sendButton" onClick={(event) => sendMessage(event)}>
-    //     Send
-    //   </Button>
-    // </FormControl>
     <Box height="30%" position="relative">
       <Input
         value={message}
