@@ -6,7 +6,6 @@ import "./Chat.css";
 import "../ChatBox/ChatBox.css";
 import VideoBox from "../VideoBox/VideoBox";
 import { Flex, Box } from "@chakra-ui/core";
-import InputColumn from "../ChatBox/Input";
 import ChatBox from "../ChatBox/ChatBox";
 
 let socket;
@@ -16,6 +15,7 @@ const Chat = () => {
   const [room, setRoom] = useState(""); //j0in page
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
+  const [users, setUsers] = useState([]);
   const ENDPOINT = "localhost:5000";
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search);
@@ -28,7 +28,6 @@ const Chat = () => {
     socket.emit("join", { name, room }, () => {});
     return () => {
       socket.emit("disconnect");
-
       socket.off();
     };
   }, [ENDPOINT, window.location.search]);
@@ -37,7 +36,14 @@ const Chat = () => {
     socket.on("message", (message) => {
       setMessages([...messages, message]);
     });
-  }, [messages]);
+    socket.on(
+      "roomData",
+      ({ users }) => {
+        setUsers(users);
+      },
+      []
+    );
+  }, []);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -75,6 +81,7 @@ const Chat = () => {
           sendMessage={sendMessage}
           messages={messages}
           name={name}
+          users={users}
         />
       </Flex>
     </div>

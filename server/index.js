@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
 
     socket.join(user.room);
 
-    io.to(user.room).emit("roomDate", {
+    io.to(user.room).emit("roomData", {
       room: user.room,
       users: getUsersinRoom(user.room),
     });

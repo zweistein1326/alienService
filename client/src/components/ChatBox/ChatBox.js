@@ -17,6 +17,9 @@ const ChatBox = (props) => {
       className="outer"
     >
       <Box height="70%" width="100%" className="chat">
+        {props.users.map((user) => (
+          <h1>{user.name}</h1>
+        ))}
         <Messages messages={props.messages} name={props.name} />
       </Box>
       <InputColumn
