@@ -1,14 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Dashboard from "./components/Dashboard/Dashboard";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Join from "./components/Join";
+import Chat from "./components/Chat";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Dashboard />
+      <Router>
+        <Route path="/" exact component={Join}></Route>
+        <Route path="/chat" component={Chat}></Route>
+      </Router>
     </div>
   );
 }
