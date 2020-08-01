@@ -4,7 +4,6 @@
 }
 
 .outer {
-  border: 3.5px solid rgba(0, 178, 128, 75);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top-left-radius: 10px;
