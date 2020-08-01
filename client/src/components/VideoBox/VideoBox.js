@@ -1,10 +1,10 @@
-import React from "react"
-import { Box } from "@chakra-ui/core"
+import React from "react";
+import { Box } from "@chakra-ui/core";
 
 const VideoBox = () => {
   return (
     <Box
-      height="80%"
+      height="80vh"
       width="80%"
       margin="2rem"
       alignItems="space-between"
@@ -40,7 +40,7 @@ const VideoBox = () => {
         Option buttons go here
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default VideoBox
+export default VideoBox;

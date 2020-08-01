@@ -1,12 +1,18 @@
-import React from "react"
-import { Box, Button, Flex, Textarea } from "@chakra-ui/core"
-import "./ChatBox.css"
-import { IoIosRocket } from "react-icons/io"
+import React, { useState, useEffect } from "react";
+import { Box } from "@chakra-ui/core";
+import "./ChatBox.css";
+// import { IoIosRocket } from "react-icons/io";
+// import queryString from "query-string";
+// import io from "socket.io-client";
+// import onlineIcon from "../../icons/onlineIcon.png";
+import Input from "./Input";
 
-const ChatBox = () => {
+let socket;
+
+const ChatBox = (props) => {
   return (
     <Box
-      height="80%"
+      height="80vh"
       width="100%"
       margin="2rem"
       alignItems="space-between"
@@ -14,30 +20,11 @@ const ChatBox = () => {
       className="outer"
     >
       <Box height="70%" width="100%" className="chat">
-        This is the chat box
+        Chat Box
       </Box>
-      <Box height="30%" position="relative">
-        <Textarea
-          placeholder="Say Hello!"
-          width="50vw"
-          className="chatText"
-        ></Textarea>
-        <Button
-          variantColor="beige "
-          color="white"
-          height="32%"
-          width="100%"
-          position="relative"
-          bottom="5px"
-          backgroundColor="#00b280"
-          className="button"
-        >
-          Send
-          <IoIosRocket className="logoShip" />
-        </Button>
-      </Box>
+      <Input props={props} />
     </Box>
-  )
-}
+  );
+};
 
-export default ChatBox
+export default ChatBox;
