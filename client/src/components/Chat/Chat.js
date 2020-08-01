@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-// import queryString from "query-string";
-// import io from 'socket.io-client'
+import queryString from "query-string";
+import io from "socket.io-client";
 import Header from "../Header/Header";
 import "./Chat.css";
 import "../ChatBox/ChatBox.css";
 import VideoBox from "../VideoBox/VideoBox";
 import { Flex, Box } from "@chakra-ui/core";
 import InputColumn from "../ChatBox/Input";
+
+let socket;
 
 const Chat = () => {
   const [name, setName] = useState("");
