@@ -15,7 +15,7 @@ const ChatBox = () => {
         This is the chat box
       </Box>
       <Box height="20%" width="100%">
-        <Button color="teal" height="100%" width="100%">
+        <Button variantColor="beige " color="black" height="100%" width="100%">
           Send
         </Button>
       </Box>
