@@ -1,10 +1,11 @@
-import React from "react";
-import { IoIosRocket } from "react-icons/io";
-import { Box, Button, FormControl, Input, Flex } from "@chakra-ui/core";
+import React from "react"
+import { IoIosRocket } from "react-icons/io"
+import { Box, Button, FormControl, Input, Flex } from "@chakra-ui/core"
+import "./ChatBox.css"
 
 const InputColumn = ({ message, setMessage, sendMessage }) => {
   return (
-    <Box height="30%" position="relative">
+    <Box height="15%" position="relative">
       <Input
         value={message}
         placeholder="Say Hello!"
@@ -29,7 +30,7 @@ const InputColumn = ({ message, setMessage, sendMessage }) => {
         <IoIosRocket className="logoShip" />
       </Button>
     </Box>
-  );
-};
+  )
+}
 
-export default InputColumn;
+export default InputColumn
