@@ -43,7 +43,7 @@ const Chat = () => {
       },
       []
     );
-  }, []);
+  }, [messages]);
 
   const sendMessage = (event) => {
     event.preventDefault();
