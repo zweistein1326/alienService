@@ -45,11 +45,30 @@ const Chat = () => {
     );
   }, [messages]);
 
+  navigator.getUserMedia(
+    { video: true, audio: true },
+    (stream) => {
+      const localVideo = document.getElementById("local-video");
+      // console.log(localVideo);
+      if (localVideo) {
+        localVideo.srcObject = stream;
+      }
+    },
+    (error) => {
+      console.warn(error.message);
+    }
+  );
+
   const sendMessage = (event) => {
     event.preventDefault();
     if (message) {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
+  };
+
+  const sendVideo = (event) => {
+    event.preventDefault();
+    socket.emit("video");
   };
   console.log(message, messages);
 

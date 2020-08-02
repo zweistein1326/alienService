@@ -2,6 +2,7 @@ const express = require("express");
 const socketio = require("socket.io");
 const http = require("http");
 const cors = require("cors");
+const path = require("path");
 
 const { addUser, removeUser, getUser, getUsersinRoom } = require("./users.js");
 
@@ -61,7 +62,9 @@ io.on("connection", (socket) => {
   });
 });
 
-app.use(router);
-app.use(cors());
+// app.use(router);
+// app.use(cors());
+console.log(path.join(__dirname, "../client/public"));
+app.use(express.static(path.join(__dirname, "../client/public")));
 
 server.listen(PORT, () => console.log(`Server running on port:${PORT}`));

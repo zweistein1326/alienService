@@ -25,10 +25,170 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      canvas.deepar {
+        border: 0px none;
+        background-color: black;
+        display: block;
+        margin: auto;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #loader-wrapper {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      .loader {
+        display: inline-block;
+        position: relative;
+        top: 42%;
+        z-index: 1000;
+
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        background-color: #00f;
+
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.5s infinite ease-in-out;
+        animation: sk-scaleout 1.5s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+        }
+
+        100% {
+          -webkit-transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .effect-carousel {
+        position: fixed !important;
+        width: 100%;
+        height: 130px;
+        bottom: 0px;
+        z-index: 999999;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <canvas
+        class="deepar"
+        id="deepar-canvas"
+        oncontextmenu="event.preventDefault()"
+      ></canvas>
+      <div id="loader-wrapper">
+        <span class="loader"></span>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script type="text/javascript" src="lib/deepar.js"></script>
+    <script type="text/javascript">
+      var canvasHeight = window.innerHeight;
+      var canvasWidth = window.innerWidth;
+
+      var deepAR = DeepAR({
+        canvasWidth: 0.66 * canvasWidth,
+        canvasHeight: canvasHeight,
+
+        licenseKey:
+          "001fc79848e4705390dbb6f30370ef8bf3c787d53f7a378cce2129ad3278a9cd2dcc49ea18498487",
+        canvas: document.getElementById("deepar-canvas"),
+        numberOfFaces: 1,
+        onInitialize: function () {
+          // start video immediately after the initalization, mirror = true
+          deepAR.startVideo(true);
+
+          // or we can setup the video element externally and call deepAR.setVideoElement (see startExternalVideo function below)
+
+          deepAR.switchEffect(
+            0,
+            "slot",
+            "./effects/alien_galaxy_background",
+            function () {
+              // effect loaded
+            }
+          );
+        },
+      });
+
+      deepAR.onCameraPermissionAsked = function () {
+        console.log("camera permission asked");
+      };
+
+      deepAR.onCameraPermissionGranted = function () {
+        console.log("camera permission granted");
+      };
+
+      deepAR.onCameraPermissionDenied = function () {
+        console.log("camera permission denied");
+      };
+
+      deepAR.onScreenshotTaken = function (photo) {
+        console.log("screenshot taken");
+      };
+
+      deepAR.onImageVisibilityChanged = function (visible) {
+        console.log("image visible", visible);
+      };
+
+      deepAR.onFaceVisibilityChanged = function (visible) {
+        console.log("face visible", visible);
+      };
+
+      deepAR.onVideoStarted = function () {
+        var loaderWrapper = document.getElementById("loader-wrapper");
+        loaderWrapper.style.display = "none";
+      };
+
+      deepAR.downloadFaceTrackingModel("lib/models-68-extreme.bin");
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
