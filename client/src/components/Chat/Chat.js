@@ -16,7 +16,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
   const [users, setUsers] = useState([]);
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = "https://alien8.herokuapp.com/";
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search);
 
@@ -58,23 +58,6 @@ const Chat = () => {
       <Header room={room} />
       <Flex>
         <VideoBox />
-        {/* <Box
-          height="80vh"
-          width="100%"
-          margin="2rem"
-          alignItems="space-between"
-          justifyContent="center"
-          className="outer"
-        >
-          <Box height="70%" width="100%" className="chat">
-            Chat Box
-          </Box>
-          <InputColumn
-            message={message}
-            setMessage={setMessage}
-            sendMessage={sendMessage}
-          />
-        </Box> */}
         <ChatBox
           message={message}
           setMessage={setMessage}
