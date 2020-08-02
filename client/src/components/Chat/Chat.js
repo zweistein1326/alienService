@@ -58,23 +58,6 @@ const Chat = () => {
       <Header room={room} />
       <Flex>
         <VideoBox />
-        {/* <Box
-          height="80vh"
-          width="100%"
-          margin="2rem"
-          alignItems="space-between"
-          justifyContent="center"
-          className="outer"
-        >
-          <Box height="70%" width="100%" className="chat">
-            Chat Box
-          </Box>
-          <InputColumn
-            message={message}
-            setMessage={setMessage}
-            sendMessage={sendMessage}
-          />
-        </Box> */}
         <ChatBox
           message={message}
           setMessage={setMessage}
