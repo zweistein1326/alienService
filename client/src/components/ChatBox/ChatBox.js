@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Box } from "@chakra-ui/core";
-import "./ChatBox.css";
-import InputColumn from "./Input";
-import Messages from "../Messages/Messages";
+import React, { useState, useEffect } from "react"
+import { Box } from "@chakra-ui/core"
+import "./ChatBox.css"
+import InputColumn from "./Input"
+import Messages from "../Messages/Messages"
 
-let socket;
+let socket
 
 const ChatBox = (props) => {
   return (
@@ -25,7 +25,7 @@ const ChatBox = (props) => {
         sendMessage={props.sendMessage}
       />
     </Box>
-  );
-};
+  )
+}
 
-export default ChatBox;
+export default ChatBox

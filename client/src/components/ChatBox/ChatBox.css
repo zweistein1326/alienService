@@ -27,3 +27,9 @@
   top: 0.5px;
   left: 5px;
 }
+
+#chatText {
+  padding-right: 1.5%;
+  padding-left: 1.8%;
+  margin-bottom: 1px;
+}

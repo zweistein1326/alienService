@@ -1,3 +1,43 @@
 .joinOuterContainer {
   height: 100%;
+  background-image: url("../../assets/oB7ITs.jpg");
+  background-size: cover;
+}
+
+.join-heading {
+  font-family: "Aquire";
+  color: white;
+  font-size: 45px;
+}
+
+.signin-button {
+  color: white;
+  background-color: rgb(0, 178, 128);
+  margin-top: 10px;
+  font-family: "Aquire";
+  border: 1px solid white;
+}
+
+.joinInnerContainer {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.joinInnerContainer input {
+  width: 90%;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border: 3px solid black;
+  font-family: "Aquire";
+  padding-left: 15px;
+}
+
+.join-link {
+  text-decoration: none;
 }
