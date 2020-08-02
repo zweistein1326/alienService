@@ -1,6 +1,9 @@
-.logo-endcall{
-
+.spread {
+  text-align: center;
+  padding-top: 5px;
+  background-color: rgba(0, 178, 128, 1);
 }
-.spread{
-    text-align: center;
+
+.logoC {
+  color: black;
 }

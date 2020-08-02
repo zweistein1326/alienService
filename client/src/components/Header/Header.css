@@ -20,6 +20,6 @@
 .logo {
   color: white;
   position: relative;
-  top: 30px;
-  right: 7px;
+  transform: translateY(75%);
+  padding-right: 7px;
 }
