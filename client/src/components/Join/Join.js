@@ -13,36 +13,42 @@ const Join = () => {
       <div className="joinInnerContainer">
         <GiSpaceship className="join-logo" color="white" size="80" />
         <h1 className="join-heading">Prepare for TakeOff</h1>
+        {/* <div> */}
+        <input
+          placeholder="Pilot Name"
+          className="joinInput"
+          type="text"
+          onChange={(event) => setName(event.target.value)}
+        />
+        {/* </div> */}
         <div>
           <input
-            placeholder="Name"
-            className="joinInput"
-            type="text"
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Room"
+            placeholder="Destination Planet"
             className="joinInput mt-20"
             type="text"
             onChange={(event) => setRoom(event.target.value)}
             height="30%"
+            width="88px"
           />
         </div>
-        <Link
-          onClick={(event) => (!name || !room ? event.preventDefault() : null)}
-          to={`/chat?name=${name}&room=${room}`}
-          className="join-link"
-        >
-          <Button
-            className="signin-button mt-20"
-            type="submit"
-            backgroundColor="#00b280"
+        <div className="signDiv">
+          <Link
+            onClick={(event) =>
+              !name || !room ? event.preventDefault() : null
+            }
+            to={`/chat?name=${name}&room=${room}`}
+            className="join-link"
           >
-            Initiate Liftoff
-          </Button>
-        </Link>
+            <Button
+              className="signin-button mt-20"
+              type="submit"
+              backgroundColor="#00b280"
+              width="100%"
+            >
+              Initiate Launch Sequence
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   )

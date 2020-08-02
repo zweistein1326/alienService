@@ -9,7 +9,7 @@ const InputColumn = ({ message, setMessage, sendMessage }) => {
       <Input
         value={message}
         placeholder="Say Hello!"
-        className="chatText"
+        id="chatText"
         onChange={(event) => setMessage(event.target.value)}
         onKeyPress={(event) =>
           event.key === "Enter" ? sendMessage(event) : null
