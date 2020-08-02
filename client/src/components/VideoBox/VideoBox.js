@@ -60,16 +60,6 @@ class VideoBox extends React.Component {
               <br />
             </div>
           )}
-          <Box
-            border="2px solid black"
-            height="28%"
-            width="40%"
-            bottom="7px"
-            right="2"
-            position="absolute"
-          >
-            User2 image goes here
-          </Box>
         </Box>
         <Box
           border="2px solid black"
