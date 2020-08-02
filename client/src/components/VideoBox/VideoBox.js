@@ -1,10 +1,10 @@
-import React from "react";
-import { Box } from "@chakra-ui/core";
-import Webcam from "react-webcam";
-import { RiCameraLine, RiCameraOffLine, RiAliensLine} from 'react-icons/ri';
-import { FiMic, FiMicOff } from 'react-icons/fi';
-import { MdFace } from 'react-icons/md';
-import './VideoBox.css';
+import React from "react"
+import { Box } from "@chakra-ui/core"
+import Webcam from "react-webcam"
+import { RiCameraLine, RiCameraOffLine, RiAliensLine } from "react-icons/ri"
+import { FiMic, FiMicOff } from "react-icons/fi"
+import { MdFace } from "react-icons/md"
+import "./VideoBox.css"
 
 class VideoBox extends React.Component {
   state = {
@@ -14,21 +14,21 @@ class VideoBox extends React.Component {
   }
   cameraOn = () => {
     this.setState({
-      openCamera: !this.state.openCamera
+      openCamera: !this.state.openCamera,
     })
   }
   muteOn = () => {
     this.setState({
-      openMic: !this.state.openMic
+      openMic: !this.state.openMic,
     })
   }
   alienOn = () => {
     this.setState({
-      openFilter: !this.state.openFilter
+      openFilter: !this.state.openFilter,
     })
   }
   render() {
-    const {openCamera,openMic, openFilter} = this.state
+    const { openCamera, openMic, openFilter } = this.state
     return (
       <Box
         height="80vh"
@@ -46,7 +46,20 @@ class VideoBox extends React.Component {
           marginBottom="0"
           position="relative"
         >
-          {openCamera ? <Webcam mirrored="true" imageSmoothing="true" size="40" height="80%" width="80%"/> : <div><p>Please Turn On your Video</p><br/></div>}
+          {openCamera ? (
+            <Webcam
+              mirrored="true"
+              imageSmoothing="true"
+              size="40"
+              height="80%"
+              width="80%"
+            />
+          ) : (
+            <div>
+              <p>Please Turn On your Video</p>
+              <br />
+            </div>
+          )}
           <Box
             border="2px solid black"
             height="28%"
@@ -56,7 +69,7 @@ class VideoBox extends React.Component {
             position="absolute"
           >
             User2 image goes here
-        </Box>
+          </Box>
         </Box>
         <Box
           border="2px solid black"
@@ -65,18 +78,37 @@ class VideoBox extends React.Component {
           position="relative"
           opacity="none"
           alignItems="space-between"
+          backgroundColor="rgb(0,178, 128)"
         >
-        <div className="spread">
-        <a onClick={this.cameraOn}>{openCamera ? <RiCameraOffLine size="40" className="logo-endcall" /> : <RiCameraLine size="40" className="logo-endcall" />}</a>
-        &emsp;&emsp;&emsp;&emsp;
-        <a onClick={this.muteOn}>{openMic ? <FiMicOff size="40" className="logo-endcall" /> : <FiMic size="40" className="logo-endcall" />}</a>
-        &emsp;&emsp;&emsp;&emsp;
-        <a onClick={this.alienOn}>{openFilter ? <RiAliensLine size="40" className="logo-endcall" /> : <MdFace size="40" className="logo-endcall" />}</a>
-        </div>
+          <div className="spread">
+            <a onClick={this.cameraOn}>
+              {openCamera ? (
+                <RiCameraOffLine size="40" className="logoC" />
+              ) : (
+                <RiCameraLine size="40" className="logoC" />
+              )}
+            </a>
+            &emsp;&emsp;&emsp;&emsp;
+            <a onClick={this.muteOn}>
+              {openMic ? (
+                <FiMicOff size="40" className="logoC" />
+              ) : (
+                <FiMic size="40" className="logoC" />
+              )}
+            </a>
+            &emsp;&emsp;&emsp;&emsp;
+            <a onClick={this.alienOn}>
+              {openFilter ? (
+                <RiAliensLine size="40" className="logoC" />
+              ) : (
+                <MdFace size="40" className="logoC" />
+              )}
+            </a>
+          </div>
+        </Box>
       </Box>
-      </Box>
-    );
+    )
   }
-};
+}
 
-export default VideoBox;
+export default VideoBox

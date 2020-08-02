@@ -1,32 +1,36 @@
-import React from "react";
-import ReactEmoji from "react-emoji";
+import React from "react"
+import ReactEmoji from "react-emoji"
+import "./Message.css"
 
 const Message = ({ message: { user, text }, name }) => {
-  let isSentByCurrentUser = false;
-  const trimmedName = name.trim().toLowerCase();
+  const trimmedName = name.trim().toLowerCase()
+  let isSentByCurrentUser = user === trimmedName
+  let isSentByAdmin = user === "admin"
 
-  if (user === trimmedName) {
-    isSentByCurrentUser = true;
+  if (isSentByCurrentUser) {
+    return (
+      <div className="user">
+        <p className="userName">{trimmedName}</p>
+        <div>
+          <p className="usermsg">{ReactEmoji.emojify(text)}</p>
+        </div>
+      </div>
+    )
+  } else if (isSentByAdmin) {
+    return (
+      <div className="messageContainer">
+        <p className="adminText">{ReactEmoji.emojify(text)}</p>
+      </div>
+    )
   }
-  return isSentByCurrentUser ? (
-    <div className="messageContainer">
-      <p className="sentText" style={{ color: "teal" }}>
-        {trimmedName}
-      </p>
-      <div className="messageBox">
-        <p className="messageText">{ReactEmoji.emojify(text)}</p>
+  return (
+    <div className="other">
+      <p className="otherName">{user}</p>
+      <div>
+        <p className="othermsg">{ReactEmoji.emojify(text)}</p>
       </div>
     </div>
-  ) : (
-    <div className="messageContainer">
-      <p className="receivedText" style={{ color: "red" }}>
-        {user}
-      </p>
-      <div className="messageBox">
-        <p className="messageText">{ReactEmoji.emojify(text)}</p>
-      </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message
