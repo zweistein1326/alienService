@@ -1,7 +1,7 @@
 # ALIEN8
 ALIEN8 is a fully anonymous videochatting app that allows people to make new friends from around the world without being judged based on their appearance. 
 
-![ALIEN8 Logo](client/src/assets/pexels-felix-mittermeier-2832084.jpg?raw=true "Logo")
+![ALIEN8 Logo](client/src/assets/logo.jpeg?raw=true "Logo")
 
 _This project is a hackathon submission for **To The Moon and Hack** organised by MLH from 31st July - 2nd August_
 
@@ -29,4 +29,4 @@ Navigate to the server folder from root directory `cd server` and then start the
 
 This will start the server on `localhost:5000` and enable the chat to work for multiple client logins to the same "planet number"
 
-![Opening Screen](client/src/assets/pexels-felix-mittermeier-2832084.jpg?raw=true "Opening Screen")
+![Opening Screen](client/src/assets/screen.jpeg?raw=true "Opening Screen")
