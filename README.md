@@ -30,3 +30,5 @@ Navigate to the server folder from root directory `cd server` and then start the
 This will start the server on `localhost:5000` and enable the chat to work for multiple client logins to the same "planet number"
 
 ![Opening Screen](client/src/assets/screen.jpeg?raw=true "Opening Screen")
+
+*May the force be with you!*
