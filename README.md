@@ -10,6 +10,8 @@ https://alien8.netlify.app/ (production website)
 
 https://devpost.com/software/alienservice (devpost submission for our project)
 
+https://youtu.be/YWlcoPCiQL0 (YouTube video)
+
 ## Using this repository 
 To use this repository, one must start the server and client.
 #### Client
