@@ -1,5 +1,5 @@
-# ALIEN8
-ALIEN8 is a fully anonymous videochatting app that allows people to make new friends from around the world without being judged based on their appearance. 
+# Alien8
+Alien8 is a fully anonymous videochatting app that allows people to make new friends from around the world without being judged based on their appearance. 
 
 ![ALIEN8 Logo](client/src/assets/logo.jpeg?raw=true "Logo")
 
